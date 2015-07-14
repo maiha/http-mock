@@ -49,3 +49,11 @@ libraryDependencies ++= Seq(
 
 fork in run := true
 fork in Test := true
+
+scalacOptions in (Compile, doc) ++= {
+  val gitHash = sys.process.Process("git rev-parse HEAD").lines_!.head
+  Seq(
+    "-sourcepath", (baseDirectory in LocalRootProject).value.getAbsolutePath,
+    "-doc-source-url", "https://github.com/maiha/http-mock/tree/" + gitHash + "€{FILE_PATH}.scala"
+  )
+}
