@@ -177,3 +177,24 @@ Library
 
 See [build.sbt](./build.sbt)
 
+Release
+=======
+
+```shell
+% sbt
+> compile
+> publishSigned
+> sonatypeRelease
+```
+
+If you got `Unable to find credentials` in `publishSigned` phase,
+it might have to do with credentials at `~/.sbt/0.13/sonatype.sbt`.
+
+```
+[error] Unable to find credentials for [Sonatype Nexus Repository Manager @ oss.sonatype.org].
+[trace] Stack trace suppressed: run last *:publishSigned for the full output.
+[error] (*:publishSigned) java.io.IOException: Access to URL https://oss.sonatype.org/service/local/staging/deploy/maven2/sc/ala/http-mock_2.11/0.3.3/http-mock_2.11-0.3.3-javadoc.jar was refused by the server: Unauthorized
+```
+
+See: http://www.scala-sbt.org/release/docs/Using-Sonatype.html
+
