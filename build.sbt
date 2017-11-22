@@ -1,7 +1,8 @@
 val Scala211 = "2.11.11"
+val Scala212 = "2.12.4"
 
-crossScalaVersions := "2.12.2" :: Scala211 :: Nil
-scalaVersion := Scala211
+crossScalaVersions := Scala212 :: Scala211 :: Nil
+scalaVersion := Scala212
 
 scalacOptions := Seq(
   "-encoding", "UTF-8", "-target:jvm-1.8", "-deprecation",
@@ -43,8 +44,8 @@ pomExtra := (
 )
 
 libraryDependencies ++= Seq(
-  "com.typesafe.play" %% "play-netty-server" % "2.6.2",
-  "org.scalatest" %% "scalatest" % "3.0.3" % "test",
+  "com.typesafe.play" %% "play-netty-server" % "2.6.7",
+  "org.scalatest" %% "scalatest" % "3.0.4" % "test",
   "com.ning" % "async-http-client" % "1.9.40" % "test"
 )
 
