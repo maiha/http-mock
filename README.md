@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/maiha/http-mock.svg?branch=master)](https://travis-ci.org/maiha/http-mock)
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/sc.ala/http-mock_2.11/badge.svg)](https://maven-badges.herokuapp.com/maven-central/sc.ala/http-mock_2.11)
+[![scala 2.11](https://maven-badges.herokuapp.com/maven-central/sc.ala/http-mock_2.11/badge.svg)](https://maven-badges.herokuapp.com/maven-central/sc.ala/http-mock_2.11)
+[![scala 2.12](https://maven-badges.herokuapp.com/maven-central/sc.ala/http-mock_2.12/badge.svg)](https://maven-badges.herokuapp.com/maven-central/sc.ala/http-mock_2.12)
 [![scaladoc](http://javadoc-badge.appspot.com/sc.ala/http-mock_2.11.svg?label=scaladoc)](http://javadoc-badge.appspot.com/sc.ala/http-mock_2.11)
-[![Build Status](https://travis-ci.org/maiha/http-mock.svg?branch=master)](https://travis-ci.org/maiha/http-mock)
 
 # HttpMock
 
@@ -71,7 +71,7 @@ val server = Setting(methods = Set(GET, POST)).start()
 
 ### customize request handler
 
-```
+```scala
 val server = Setting(handler = {
     case h: RequestHeader if h.version == "HTTP/1.0" => Results.HttpVersionNotSupported
 })
@@ -182,9 +182,9 @@ Release
 
 ```shell
 % sbt
-> compile
-> publishSigned
-> sonatypeRelease
+> + compile
+> + publishSigned
+> + sonatypeRelease
 ```
 
 If you got `Unable to find credentials` in `publishSigned` phase,
